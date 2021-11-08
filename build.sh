@@ -13,8 +13,8 @@ THREAD="-j9"
 
 
 # arter97's GCC
-GCC64_PATH="$HOME/aex_poco/prebuilts/gcc/linux-x86/aarch64/aarch64-elf"
-GCC32_PATH="$HOME/aex_poco/prebuilts/gcc/linux-x86/arm/arm-eabi"
+GCC64_PATH="$HOME/aex/aex_poco/prebuilts/gcc/linux-x86/aarch64/aarch64-elf"
+GCC32_PATH="$HOME/aex/aex_poco/prebuilts/gcc/linux-x86/arm/arm-eabi"
 
 # 64-bit GCC toolchain prefix
 GCC64_PREFIX="$GCC64_PATH/bin/aarch64-elf-"
@@ -27,8 +27,8 @@ export CROSS_COMPILE="$GCC64_PREFIX"
 export CROSS_COMPILE_ARM32="$GCC32_PREFIX"
 
 # Kernel Details
-DEFCONFIG="dipper_user_defconfig"
-VER="-2.0"
+DEFCONFIG="beryllium_user_defconfig"
+VER="-3.0"
 
 # Paths
 KERNEL_DIR=`pwd`
