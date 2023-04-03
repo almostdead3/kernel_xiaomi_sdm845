@@ -20,6 +20,9 @@
 #include "sched.h"
 #include "tune.h"
 
+#ifdef CONFIG_HOUSTON
+#include <oneplus/houston/houston_helper.h>
+#endif
 #define SUGOV_KTHREAD_PRIORITY	50
 
 struct sugov_tunables {
@@ -1034,6 +1037,10 @@ static int sugov_start(struct cpufreq_policy *policy)
 					     policy_is_shared(policy) ?
 							sugov_update_shared :
 							sugov_update_single);
+#ifdef CONFIG_HOUSTON
+		ht_register_cpu_util(cpu, cpumask_first(policy->related_cpus),
+				&sg_cpu->util, &sg_policy->hispeed_util);
+#endif
 	}
 	return 0;
 }
